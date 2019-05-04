@@ -34,7 +34,7 @@ if (isset($data['auth']))
 
     if (@$users['User']["$key"]['login'] == $loginAuth)
     {
-        if ($users['User']["$key"]['password'] == $password)
+        if ($users['User']["$key"]['password'] == sha1($password . '1qa2w3cd4fv5tg'))
         {
             $_SESSION['logged'] = $loginAuth;
 

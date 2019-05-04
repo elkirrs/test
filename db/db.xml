@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Users>
-<User><login>admin</login><email>email@email.com</email><password>admin</password><name>alex</name></User><User><login>root</login><email>wehfiu@kahfkj.ekjfh</email><password>root</password><name>mike</name></User></Users>
+    <User>
+        <login>admin</login>
+        <email>qweqw@daddw.dwdwd</email>
+        <password>d033e22ae348aeb5660fc2140aec35850c4da997</password>
+        <name>qw</name>
+    </User>
+        <User>
+            <login>root</login>
+            <email>qqqq@qqqq.qq</email>
+            <password>dc76e9f0c0006e8f919e0c515c66dbba3982f785</password>
+            <name>qweqwe</name>
+    </User>
+        <User>
+            <login>test3</login>
+            <email>alex@mail.com</email>
+            <password>8a30d3ee76264a4ea48d068b3b87e0ed0b38227a</password>
+            <name>qwe</name>
+    </User>
+</Users>

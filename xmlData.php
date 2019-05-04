@@ -16,7 +16,7 @@ $users = $xml->documentElement;
 $user = $users->appendChild($xml->createElement('User'));
 $data = $user->appendChild($xml->createElement('login', "$login"));
 $email = $user->appendChild($xml->createElement('email', "$email"));
-$pass = $user->appendChild($xml->createElement('password', "$password"));
+$pass = $user->appendChild($xml->createElement('password', "$pass"));
 $name = $user->appendChild($xml->createElement('name', "$name"));
 $xml->formatOutput = true;
 

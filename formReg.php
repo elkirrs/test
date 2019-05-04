@@ -47,8 +47,10 @@ if (isset($data['reg']))
     }
 
 
-    if ($password == '')
+    if ($password != '')
     {
+        $pass = sha1($password . '1qa2w3cd4fv5tg');
+    }else{
         $errors[] = 'Введите пароль';
     }
 
