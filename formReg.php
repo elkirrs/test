@@ -1,7 +1,27 @@
 <?php
+session_start();
 
 $data = $_POST;
+$db = new DOMDocument();
+$db->load('db/db.xml');
+$emailUsers = $db->getElementsByTagName('email');
+$loginUsers = $db->getElementsByTagName('login');
 
+
+
+//$loginUsers = $db->getElementsByTagName('login');
+//foreach ($loginUsers as $loginUser)
+//{
+//    var_dump($loginUser->nodeValue);
+//}
+
+
+
+//$q = $db->getElementsByTagName('User');
+//foreach ($q as $a)
+//{
+//    var_dump($a);
+//}
 if (isset($data['reg']))
 {
     $login = htmlspecialchars(trim($_POST['login']));
@@ -16,6 +36,16 @@ if (isset($data['reg']))
     {
         $errors[] = 'Введите Login';
     }
+
+
+    foreach ($loginUsers as $loginUser)
+    {
+        if ($login == $loginUser->nodeValue)
+        {
+            $errors[] = 'Login уже зарегистрирован';
+        }
+    }
+
 
     if ($password == '')
     {
@@ -37,14 +67,25 @@ if (isset($data['reg']))
         $errors[] = 'Повторный пароль введен не верно';
     }
 
+    foreach ($emailUsers as $emailUser)
+    {
+        if ($email == $emailUser->nodeValue)
+        {
+            $errors[] = 'Email уже существует!';
+        }
+    }
+
+
     if (empty($errors))
     {
 
         echo "
-        <div><p>" . $name . " Вы успешно зарегисрировались!</p>
+        <div><p>" . $name . " Вы успешно зарегисрировались! <a href='auth.php'>Авторизоваться</a></p>
 </div>
         ";
-        require_once 'auth.php';
+        require_once 'reg.php';
+
+    require_once 'xmlData.php';
     }
     else {
         echo "<div><p>" .

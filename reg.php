@@ -1,3 +1,6 @@
+<?php
+@session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,13 +11,18 @@
     <title>Document</title>
 </head>
 <body>
-
+<?php if(isset($_SESSION['logged'])) : ?>
+    <div>
+        <h2>Вы авторизованы <?php echo $_SESSION['logged']; ?></h2>
+        <a href="/test/logaut.php"><button>Выйти</button></a>
+    </div>
+<?php else : ?>
 <div>
     <h3>Регистрация</h3>
 </div>
 
 <div>
-    <form action="regForm.php" method="POST">
+    <form action="formReg.php" method="POST">
         <p>Login: <br>
             <input type="text" name="login" placeholder="Введите логин">
         </p>
@@ -34,6 +42,6 @@
     </form>
 </div>
 
-
+<?php endif; ?>
 </body>
 </html>

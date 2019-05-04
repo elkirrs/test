@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,11 +12,17 @@
 </head>
 <body>
 
+<?php if(isset($_SESSION['logged'])) : ?>
+    <div>
+        <h2>Вы авторизованы <?php echo $_SESSION['logged']; ?></h2>
+        <a href="/test/logaut.php"><button>Выйти</button></a>
+    </div>
+<?php else : ?>
 <div>
     <a href="auth.php"><h3>Авторизация</h3></a>
     <a href="reg.php"><h3>Регистрация</h3></a>
 </div>
-
+<?php endif; ?>
 
 </body>
 </html>
