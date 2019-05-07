@@ -3,9 +3,13 @@
 require_once 'header.php';
 
 if(isset($_SESSION['logged'])) : ?>
-    <div>
-        <h2>Вы авторизованы <?php echo $_SESSION['logged']; ?></h2>
-        <a href="/test/logaut.php"><button>Выйти</button></a>
+    <div class="container py-5">
+        <div class="row col-auto justify-content-md-center py-5 shadow-lg">
+            <div>
+                <h2 >Вы авторизованы как <?= $_SESSION['logged']; ?></h2>
+                <a href="/test/logaut.php"><button class="btn btn-outline-danger">Выйти</button></a>
+            </div>
+        </div>
     </div>
 <?php else : ?>
 <div class="container ">
