@@ -82,7 +82,7 @@ if (isset($data['reg']))
     {
 
         echo "
-        <div><p>" . $name . " Вы успешно зарегисрировались! <a href='auth.php'>Авторизоваться</a></p>
+        <div><p class='alert alert-success'><strong>" . $name . "</strong> Вы успешно зарегисрировались! <a href='auth.php'>Авторизоваться</a></p>
 </div>
         ";
         require_once 'reg.php';
@@ -90,7 +90,7 @@ if (isset($data['reg']))
     require_once 'xmlData.php';
     }
     else {
-        echo "<div><p>" .
+        echo "<div><p class='alert alert-danger'>" .
     array_shift($errors) . "
     </p>
 </div>";

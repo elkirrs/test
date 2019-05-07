@@ -1,26 +1,26 @@
 <?php
 session_start();
+require 'header.php';
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
 
 <?php if(isset($_SESSION['logged'])) : ?>
-    <div>
-        <h2>Вы авторизованы <?php echo $_SESSION['logged']; ?></h2>
-        <a href="/test/logaut.php"><button>Выйти</button></a>
+    <div class="container py-5">
+        <div class="row col-auto justify-content-md-center py-5 shadow-lg">
+           <div>
+               <h2 >Вы авторизованы как <?= $_SESSION['logged']; ?></h2>
+               <a href="/test/logaut.php"><button class="btn btn-outline-danger">Выйти</button></a>
+           </div>
+        </div>
     </div>
 <?php else : ?>
-<div>
-    <a href="auth.php"><h3>Авторизация</h3></a>
-    <a href="reg.php"><h3>Регистрация</h3></a>
+<div class="container p-5 shadow-lg my-5">
+    <div class="row">
+        <div class="col-md-5 offset-md-5">
+            <a href="auth.php"><h3><button class="btn btn-outline-success">Авторизация</button></h3></a>
+            <a href="reg.php"><h3><button class="btn btn-outline-primary">Регистрация</button></h3></a>
+
+        </div>
+    </div>
 </div>
 <?php endif; ?>
 

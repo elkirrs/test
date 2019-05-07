@@ -37,9 +37,9 @@ if (isset($data['auth']))
         if ($users['User']["$key"]['password'] == sha1($password . '1qa2w3cd4fv5tg'))
         {
             $_SESSION['logged'] = $loginAuth;
-
+                require 'header.php';
             echo "
-        <div><p><strong>" . $_SESSION['logged'] . "</strong> Вы успешно авторизовались! <a href='/test'>Перейти на главную страницу</a></p>
+        <div class='row justify-content-center'><p class='alert alert-success'><strong>" . $_SESSION['logged'] . "</strong> Вы успешно авторизовались! <a href='/test'>Перейти на главную страницу</a></p>
 </div>
         ";
 
